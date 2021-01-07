@@ -100,18 +100,17 @@ export default async () => {
     exports: undefined,
     scripts: undefined,
     prettier: undefined,
+    eslintConfig: undefined,
     jest: undefined,
     dependencies: undefined,
     devDependencies: undefined,
     peerDependencies: undefined,
     ...pkg,
     ...({
-      browser: "./dist/index.mjs",
       module: "./dist/index.mjs",
       main: "./dist/index.js",
       exports: {
         ".": {
-          browser: "./dist/index.mjs",
           import: "./dist/index.mjs",
           require: "./dist/index.js",
         },
