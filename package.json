@@ -1,6 +1,6 @@
 {
   "name": "@mo36924/build",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "build",
   "keywords": [],
   "author": "",
@@ -16,16 +16,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "module": "./dist/index.mjs",
   "main": "./dist/index.js",
   "bin": {
     "build": "./dist/bin.js"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
   },
   "scripts": {
     "build": "run-s clean test lint format compile",
