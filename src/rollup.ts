@@ -33,7 +33,7 @@ export async function rollup() {
   const bundle = await _rollup({
     input,
     external,
-    plugins: [typescript(), json({ preferConst: true }), preserveShebangs()],
+    plugins: [typescript({ declaration: false }), json({ preferConst: true }), preserveShebangs()],
   });
 
   await Promise.all([
@@ -57,7 +57,7 @@ export async function rollup() {
     const bundle = await _rollup({
       input: "src/index.browser.ts",
       external,
-      plugins: [typescript(), json({ preferConst: true }), preserveShebangs()],
+      plugins: [typescript({ declaration: false }), json({ preferConst: true }), preserveShebangs()],
     });
 
     await bundle.write({

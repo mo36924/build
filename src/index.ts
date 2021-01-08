@@ -56,7 +56,6 @@ export default async () => {
   await exec("npx eslint --ext .ts,.tsx --fix .");
   await exec("npx prettier --write .");
   await exec("npx tsc");
-
   await del(["dist/**/__tests__/", "dist/**/*.test.*"]);
   await rollup();
 };
