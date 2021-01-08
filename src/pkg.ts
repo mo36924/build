@@ -42,7 +42,7 @@ export async function pkg() {
     browser: undefined,
     module: undefined,
     main: undefined,
-    bin: binName ? { [binName]: "./dist/bin.js" } : undefined,
+    bin: undefined,
     exports: undefined,
     scripts: undefined,
     prettier: undefined,
@@ -56,6 +56,7 @@ export async function pkg() {
       browser: browser,
       module: "./dist/index.mjs",
       main: "./dist/index.js",
+      bin: binName ? { [binName]: "./dist/bin.js" } : undefined,
       exports: {
         ".": {
           browser: browser,
