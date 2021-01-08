@@ -1,6 +1,8 @@
 import { rmdir } from "fs/promises";
 import del from "del";
 import { exec } from "./exec";
+import { gitignore } from "./gitignore";
+import { npmignore } from "./npmignore";
 import { pkg } from "./pkg";
 import { rollup } from "./rollup";
 import { write } from "./write";
@@ -50,6 +52,8 @@ export default async () => {
       }),
     ),
     pkg(),
+    gitignore(),
+    npmignore(),
   ]);
 
   await exec("npx jest --passWithNoTests");
